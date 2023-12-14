@@ -1,5 +1,10 @@
-class App {
-  async play() {}
-}
+import MainController from "./controllers/MainController.js";
 
-export default App;
+export default class App {
+  constructor() {
+    this.mainController = new MainController();
+  }
+  async play() {
+    await this.mainController.start();
+  }
+}
